@@ -1,0 +1,18 @@
+--------------------------------------------------------------------------------
+
+    airena
+    current version:     0.0.1-utra-alpha
+    by:                  Rikard Johansson
+
+    This is so far just a test environment. But it is supposed to be a fighting
+    arena for self-learning AI:s. The idea is to create an interface towards
+    a world, in which one only can send and receive events, nothing else.
+
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+ version x.x.x, xxxx-xx-xx
+--------------------------------------------------------------------------------
+    * tdb
+--------------------------------------------------------------------------------

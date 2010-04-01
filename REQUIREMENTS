@@ -1,0 +1,5 @@
+Requirements:
+    * Entity should not know about World, more than sending events to it
+    * No possibility for Entity to affect World
+    * Events should be handled in the order they enters the World (no iteration of Entities)
+    * Ability to only send one event per time-unit for Entity (no spamming)
