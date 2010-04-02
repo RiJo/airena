@@ -1,3 +1,4 @@
+#you touched your makefile oh no!
 CC       =  g++
 CCFLAGS  =  -O2 -march=core2 -Wall
 DEBUG    =  -g -D=_DEBUG_
