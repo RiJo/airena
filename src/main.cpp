@@ -14,11 +14,17 @@
 
 std::set<Entity *> entities;
 std::queue<Event *> events;
+std::set<Entity *> pending;
 
 
-void event(Entity *ref, CAUSE_EVENT e) {
-    Event *foo = new Event(ref, e, 1.0);
-    events.push(foo);
+void event(Entity *reference, CAUSE_EVENT event, float factor) {
+    if (pending.count(reference) == 1) {
+        events.push(new Event(reference, event, factor));
+        pending.erase(reference);
+    }
+    else {
+        printf("NOT ALLOWED TO SEND MORE EVENTS\n");
+    }
 }
 
 void handle_event(Event *e) {
@@ -39,7 +45,9 @@ int main(int argc, char **argv) {
 
     std::set<Entity *>::iterator it;
     while (1) {
+        pending.clear();
         for (it = entities.begin(); it != entities.end(); it++) {
+            pending.insert(*it);
             (*it)->tick();
         }
 

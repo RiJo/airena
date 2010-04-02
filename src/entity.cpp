@@ -1,9 +1,13 @@
 #include "entity.h"
 
-Entity::Entity(callback e) {
-    send_event = e;
+Entity::Entity(callback cause) {
+    send_event = cause;
 }
 
-void Entity::cause(CAUSE_EVENT e) {
-    send_event(this, e);
+Entity::~Entity() {
+    // nop
+}
+
+void Entity::cause(CAUSE_EVENT event, float factor) {
+    send_event(this, event, factor);
 }

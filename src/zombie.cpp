@@ -8,5 +8,6 @@ void Zombie::effect(EFFECT_EVENT e, float factor) {
 
 void Zombie::tick() {
     printf("tick() = Zombie (%ld)\n", (long)this);
-    cause(WALK);
+    cause(WALK, 0.666);
+    cause(ROTATE, 1.0);
 }
